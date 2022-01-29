@@ -1,0 +1,6 @@
+NUXT_APP_TYPE="local" # local : 로컬환경 ,  product : 실 서버 환경
+NUXT_LOCAL_APP_BASE_URL="http://localhost:3000"
+NUXT_LOCAL_APP_API_URL="http://localhost:9000"
+
+NUXT_PRODUCT_APP_BASE_URL="http://nuxt.com:3000"
+NUXT_PRODUCT_APP_API_URL="http://api.nuxt.com:3000"
