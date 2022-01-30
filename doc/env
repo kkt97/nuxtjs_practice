@@ -1,4 +1,8 @@
-NUXT_APP_TYPE="local" # local : 로컬환경 ,  product : 실 서버 환경
+#test : 테스트환경 ,  local : 로컬환경 ,  product : 실 서버 환경
+NUXT_APP_TYPE="test"
+
+NUXT_TEST_APP_API_URL="https://api.nuxtjs.dev"
+
 NUXT_LOCAL_APP_BASE_URL="http://localhost:3000"
 NUXT_LOCAL_APP_API_URL="http://localhost:9000"
 

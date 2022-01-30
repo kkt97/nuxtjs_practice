@@ -28,6 +28,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    '@/plugins/axios'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -58,10 +59,11 @@ export default {
   },
   proxy: {
     '/api/': {
-      target: process.env.NUXT_APP_TYPE == "local" ?
-        process.env.NUXT_LOCAL_APP_API_URL :
-        process.env.NUXT_PRODUCT_APP_API_URL
-      ,
+      target: process.env.NUXT_APP_TYPE === 'test' ?
+        process.env.NUXT_TEST_APP_API_URL :
+          process.env.NUXT_APP_TYPE === 'local' ?
+            process.env.NUXT_LOCAL_APP_API_URL :
+            process.env.NUXT_PRODUCT_APP_API_URL,
       pathRewrite: { '^/api:': ''},
       changeOrigin: false,
       prependPath: false

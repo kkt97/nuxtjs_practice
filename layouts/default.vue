@@ -9,7 +9,6 @@
       </v-container>
     </v-main>
     <common-footer></common-footer>
-
   </v-app>
 </template>
 
@@ -25,7 +24,7 @@ export default {
   },
   data () {
     return {
-      title: 'Vuetify.js'
+      title: 'Nuxt Practice'
     }
   }
 }
