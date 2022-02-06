@@ -7,7 +7,6 @@ export const mutations = {
     state.items.push(item)
   },
   addItems: (state, items) => {
-    console.log(items, 'addItems')
     state.items.push(...items)
   }
 }

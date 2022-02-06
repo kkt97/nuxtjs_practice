@@ -3,17 +3,18 @@
     <v-list-item
       v-for="mountain in mountains"
       :key="mountain.slug">
-      {{mountain.title}}
+      <NuxtLink :to="`/test/mountains/${mountain.slug}`">
+        {{mountain.title}}
+      </NuxtLink>
     </v-list-item>
   </v-list>
 </template>
 
 <script>
 export default {
-  name: 'test-async-data',
-  async asyncData ({ $axios, $config }) {
+  name: 'mountains-list',
+  async asyncData ({ $axios }) {
     // https://axios.nuxtjs.org/usage/
-    console.log($axios, $config)
     const mountains = await $axios.$get('/mountains')
     return { mountains }
   }

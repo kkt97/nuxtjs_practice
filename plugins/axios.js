@@ -1,4 +1,4 @@
-export default function ({ $axios }) {
+export default function ({ $axios, store }) {
   // set BaseUrl
   switch (process.env.NUXT_APP_TYPE) {
     case 'test':
@@ -12,6 +12,19 @@ export default function ({ $axios }) {
       $axios.setBaseURL(process.env.NUXT_PRODUCT_APP_API_URL)
       break
   }
+
+  // axios hooks
+  $axios.onRequest(config => {
+    store.commit('common/loading', true)
+  })
+
+  $axios.onResponse(config => {
+    store.commit('common/loading', false)
+  })
+
+  // $axios.onError(err)
+  // $axios.onRequestError(err)
+  // $axios.onResponseError(err)
 
   // set Header
   // $axios.setHeader("Authorization", "123");

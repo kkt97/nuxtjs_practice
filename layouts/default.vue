@@ -1,5 +1,6 @@
 <template>
   <v-app>
+    <common-loading v-if="loading"></common-loading>
     <common-navigation
       :title="title"
     />
@@ -15,16 +16,23 @@
 <script>
 import CommonNavigation from '@/components/common/CommonNavigation'
 import CommonFooter from '@/components/common/CommonFooter'
+import CommonLoading from '@/components/common/CommonLoading'
 
 export default {
   name: 'DefaultLayout',
   components: {
     CommonNavigation,
-    CommonFooter
+    CommonFooter,
+    CommonLoading
   },
   data () {
     return {
-      title: 'Nuxt Practice'
+      title: 'Nuxt Training'
+    }
+  },
+  computed: {
+    loading() {
+      return this.$store.state.common.loading
     }
   }
 }
