@@ -35,7 +35,7 @@
         </v-list-item-content>
       </v-list-item>
     </v-list>
-    <v-btn color="warning" @click="upTodo(userList)">
+    <v-btn color="warning" @click="upDate(userList)">
       Store 저장!
     </v-btn>
     <nuxt-link v-bind:to="{path: `/test/user/list`}">리스트</nuxt-link>
@@ -44,7 +44,7 @@
 
 <script>
 
-import { mapMutations } from 'vuex'
+import {mapMutations} from 'vuex'
 import mixinDateTimeFormat from '@/mixins/dateTimeFormat'
 
 export default {
@@ -62,12 +62,11 @@ export default {
   },
   methods: {
     ...mapMutations({
-      upTodo: 'user/upTodo'
+      upDate: 'user/upDate'
     })
   },
   async asyncData ({ store, params }) {
     const userList = store.getters['user/getTodoById'].find((userInfo) => {return userInfo.id == params.id})
-    // console.log(userList)
     if (userList) {
       return { userList }
     }

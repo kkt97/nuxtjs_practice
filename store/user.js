@@ -3,13 +3,14 @@ export const state = () => ({
 })
 
 export const mutations = {
-  setUsers (state, payload) {
+  Users (state, payload) {
     state.userList = payload
   },
-  upTodo (state, payload) {
-    console.log('1')
+  upDate (state, payload) {
     Object.assign(state.userList, payload)
-    console.log(payload)
+  },
+  regiSter (state, payload) {
+    state.userList.push(payload)
   }
 }
 
@@ -18,7 +19,6 @@ export const actions = {
 
 export const getters = {
   getTodoById (state) {
-    console.log(state.userList)
     return state.userList
   }
 }

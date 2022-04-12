@@ -23,7 +23,7 @@ export default {
     const filteredMountain = mountains.find(el =>
       el.slug === params.slug
     )
-    console.log(typeof filteredMountain)
+    console.log(filteredMountain)
     if (filteredMountain) {
       return { filteredMountain }
     }
