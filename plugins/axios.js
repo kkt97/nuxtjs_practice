@@ -14,12 +14,13 @@ export default function ({ $axios, store }) {
   }
 
   // axios hooks
-  $axios.onRequest(config => {
+  $axios.onRequest((config) => {
     store.commit('common/loading', true)
   })
 
-  $axios.onResponse(config => {
+  $axios.onResponse((config) => {
     store.commit('common/loading', false)
+    $axios.setHeader('Access-Control-Allow-Origin', 'YOUR API URL')
   })
 
   // $axios.onError(err)

@@ -17,10 +17,13 @@
     "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/moment": "^1.6.1",
     "@nuxtjs/proxy": "^2.1.0",
+    "axios": "^0.26.1",
     "core-js": "^3.19.3",
     "moment": "^2.29.1",
     "nuxt": "^2.15.8",
     "vue": "^2.6.14",
+    "vue-daum-postcode": "^0.10.0",
+    "vue-multiselect": "^2.1.6",
     "vue-server-renderer": "^2.6.14",
     "vue-template-compiler": "^2.6.14",
     "vuetify": "^2.6.1",
@@ -31,8 +34,24 @@
     "@nuxtjs/eslint-config": "^8.0.0",
     "@nuxtjs/eslint-module": "^3.0.2",
     "@nuxtjs/vuetify": "^1.12.3",
-    "eslint": "^8.4.1",
+    "eslint": "^8.12.0",
     "eslint-plugin-nuxt": "^3.1.0",
     "eslint-plugin-vue": "^8.2.0"
-  }
+  },
+  "description": "## Build Setup",
+  "main": ".eslintrc.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kkt97/nuxtjs_practice.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kkt97/nuxtjs_practice/issues"
+  },
+  "homepage": "https://github.com/kkt97/nuxtjs_practice#readme"
 }

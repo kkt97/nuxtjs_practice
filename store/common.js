@@ -3,7 +3,7 @@ export const state = () => ({
 })
 
 export const mutations = {
-  loading(state, value) {
+  loading (state, value) {
     state.loading = value
   }
 }

@@ -28,7 +28,8 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    '@/plugins/axios'
+    '@/plugins/axios',
+    { src: 'plugins/axios.js', ssr: false}
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -46,28 +47,28 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
-    '@nuxtjs/axios',
+    '@nuxtjs/axios'
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    proxy: true,   // default: false, boolean or object 설정 가능
+    proxy: true, // default: false, boolean or object 설정 가능
     // baseUrl: 'http://localhost', // proxy 설정시 baseUrl 사용 안함
     credential: false,
-    debug: true,
+    debug: true
   },
   proxy: {
     '/api/': {
-      target: process.env.NUXT_APP_TYPE === 'test' ?
-        process.env.NUXT_TEST_APP_API_URL :
-          process.env.NUXT_APP_TYPE === 'local' ?
-            process.env.NUXT_LOCAL_APP_API_URL :
-            process.env.NUXT_PRODUCT_APP_API_URL,
-      pathRewrite: { '^/api:': ''},
+      target: process.env.NUXT_APP_TYPE === 'test'
+        ? process.env.NUXT_TEST_APP_API_URL
+        : process.env.NUXT_APP_TYPE === 'local'
+          ? process.env.NUXT_LOCAL_APP_API_URL
+          : process.env.NUXT_PRODUCT_APP_API_URL,
+      pathRewrite: { '^/api:': '' },
       changeOrigin: false,
       prependPath: false
-    },
+    }
   },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify

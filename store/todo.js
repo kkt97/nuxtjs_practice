@@ -3,13 +3,13 @@ export const state = () => ({
 })
 
 export const mutations = {
-  addTodo(state, payload) {
+  addTodo (state, payload) {
     state.todoList.push(payload)
   },
-  removeTodo(state, payload) {
+  removeTodo (state, payload) {
     state.todoList.splice(state.todoList.indexOf(payload), 1)
   },
-  clearTodo(state) {
+  clearTodo (state) {
     state.todoList = []
   }
 }

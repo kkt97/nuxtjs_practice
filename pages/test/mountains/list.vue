@@ -1,8 +1,6 @@
 <template>
   <v-list>
-    <v-list-item
-      v-for="mountain in mountains"
-      :key="mountain.slug">
+    <v-list-item v-for="mountain in mountains" :key="mountain.slug">
       <NuxtLink :to="`/test/mountains/${mountain.slug}`">
         {{mountain.title}}
       </NuxtLink>

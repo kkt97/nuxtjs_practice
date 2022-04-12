@@ -24,6 +24,11 @@ export const routes = {
       icon: 'mdi-apps',
       title: 'Module Style Store',
       to: '/test/moduleStore'
+    },
+    {
+      icon: 'mdi-apps',
+      title: 'Module Style Store',
+      to: '/test/user/list'
     }
   ]
 }
