@@ -33,16 +33,16 @@
             </div>
             <div class="row mb-0">
               <div class="col-md-6 offset-md-4">
-                <v-btn @click="regiSter(userList)" class="btn btn-primary">
+                <v-btn @click="set_RegistInfo(userList)" class="btn btn-primary">
                   가입하기
                 </v-btn>
                 &nbsp;
                 <button class="btn btn-primary" @click="resetForm()">
                   Reset
                 </button>
+                <nuxt-link v-bind:to="{path: `/test/user/list`}">리스트</nuxt-link>
               </div>
             </div>
-            <router-view :key="$route.fullPath"></router-view>
           </div>
         </div>
       </div>
@@ -69,9 +69,8 @@ export default {
 
   methods: {
     ...mapMutations({
-      regiSter: 'user/regiSter'
+      set_RegistInfo: 'user/set_RegistInfo'
     }),
-
     resetForm () {
       this.item = {
         name: '',

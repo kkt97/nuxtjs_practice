@@ -35,8 +35,8 @@
         </v-list-item-content>
       </v-list-item>
     </v-list>
-    <v-btn color="warning" @click="upDate(userList)">
-      Store 저장!
+    <v-btn color="warning" @click="set_Update(userList)">
+      업데이트
     </v-btn>
     <nuxt-link v-bind:to="{path: `/test/user/list`}">리스트</nuxt-link>
   </v-card>
@@ -62,7 +62,7 @@ export default {
   },
   methods: {
     ...mapMutations({
-      upDate: 'user/upDate'
+      set_Update: 'user/set_Update'
     })
   },
   async asyncData ({ store, params }) {

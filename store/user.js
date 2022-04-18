@@ -2,18 +2,23 @@ export const state = () => ({
   userList: []
 })
 
+// 동기적인 상태값 변경 만 함
 export const mutations = {
-  Users (state, payload) {
+  get_Users (state, payload) {
     state.userList = payload
   },
-  upDate (state, payload) {
+  set_Update (state, payload) {
     Object.assign(state.userList, payload)
   },
-  regiSter (state, payload) {
+  set_RegistInfo (state, payload) {
     state.userList.push(payload)
+  },
+  set_RemoveInfo (state, payload) {
+    state.userList.splice(state.userList.indexOf(payload), 1)
   }
 }
 
+// 비동기 상태볁경또는 어떤 연산 api
 export const actions = {
 }
 
